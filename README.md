@@ -1,44 +1,67 @@
-# swisstronik-erc-721
+# Swisstronik-erc-721
 
-This project sets up a Hardhat environment to deploy and interact with an ERC-721 (NFT) contract on the Swisstronik testnet. Follow the steps below to get started.
+This repository contains a setup for deploying and interacting with an ERC-721 token on the Swisstronik testnet using Hardhat. The setup includes scripts for deploying the contract, minting tokens, and transferring tokens, utilizing encrypted transactions with Swisstronik.
 
 ## Prerequisites
 
 Ensure you have the following installed:
-- Node.js
-- npm
 
-## Setup Instructions
+- Node.js (version 14.x or later)
+- npm (version 6.x or later)
+
+## Faucet
+
+https://faucet.testnet.swisstronik.com/
+
+## Installation
 
 1. Clone the repository:
-    ```sh
-    git clone https://github.com/dante4rt/swisstronik-erc-721.git
-    cd swisstronik-erc-721
+
+    ```bash
+    git clone https://github.com/Kadafimuamar/Swisstronik_Mint_ERC721_Task_3.git
+    cd Swisstronik_Mint_ERC721_Task_3
     ```
 
-2. Make the setup script executable and run it:
-    ```sh
-    chmod +x erc721.sh
-    ./erc721.sh
+2. Run
+
+    ```bash
+    npm install --save-dev @nomicfoundation/hardhat-toolbox
+    npm install dotenv
+    npm install @swisstronik/utils
+    npm install @openzeppelin/contracts
     ```
 
-3. Follow the prompts to enter your private key and NFT details.
+## Create File .env for Private Key (Keep Safe for this)
 
-## Deployment
+1. 
 
-The script will:
-- Install necessary dependencies.
-- Create a Hardhat project.
-- Configure the Hardhat environment.
-- Create and compile an ERC-721 contract.
-- Deploy the contract to the Swisstronik testnet.
-- Mint an NFT using the deployed contract.
+```bash
+    PRIVATE_KEY=YOUR-PRIVATE-KEY
+```
 
-## Notes
 
-- The contract address will be saved in `contract.txt`.
-- The transaction hash for the minting process will be printed in the terminal.
 
-## Contact
+## Running
 
-For any issues or inquiries, please reach out via [Telegram](https://t.me/HappyCuanAirdrop).
+1. Compile
+
+ ```bash
+    npx hardhat compile
+```
+
+2. Deploy Erc-20
+
+ ```bash
+    npx hardhat run scripts/deploy.js --network swisstronik
+```
+
+2. Minting Erc-71
+
+ ```bash
+    npx hardhat run scripts/mint.js --network swisstronik
+```
+
+Success TX will appear like this :
+![Jepretan Layar 2024-07-29 pukul 01 23 27](https://github.com/user-attachments/assets/1f543f25-84b1-422a-89b5-6ccb1a67146d)
+
+
